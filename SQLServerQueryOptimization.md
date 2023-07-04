@@ -29,7 +29,9 @@ where ce.studentid = 29717;
 ````
 
 
-Before executing the query we will look at the estimated execution plan below 
+Before executing the query we will look at the estimated execution plan below
+
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan1.png)
 
 We see that the Clustered index Scan on the course enrollment table accounts for 94% cost of the query.
 To improve the performance of the query this is the operation that we would want to have a look at. The operation is scanning the whole course enrollments table to find rows where studentid = 29717.
@@ -70,6 +72,7 @@ GO
 
 Now in the estimated execution plan the index scan operation has been replaced by an index seek and a key lookup. The cost of the operation is lower.
 
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan2.png)
 
 we execute the query now and look at the statistics.
 
@@ -109,6 +112,8 @@ WHERE co.TermCode ='SP2016' AND ce.CourseOfferingId IS NULL
 Looking at the estimated execution plan, we see that the index seek accounts for 94%
 of the cost. This is because SQL server is reading all of the course offerings in that semester and then probes an index on the course enrollments table to see how many enrollments there are for that course. 
 
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan3.png)
+
 We only need to know if there is at least one enrollment therefore we can rewrite the query as follows: 
 
 
@@ -126,6 +131,7 @@ WHERE NOT EXISTS
 AND co.TermCode ='SP2016'
 ````
 
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan4.png)
 
 #### 2. Notes on Indexing
 
@@ -149,6 +155,7 @@ SELECT * FROM applicants WHERE lastname = 'Davis' and state = 'co';
 ````
 We have created an index on the applicants table and we are running a query to find an applicant by lastname and state.
 
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan5.png)
 
 We notice that there is an index scan operation that is going to read the entire index instead of using the tree structure of the index. This is because the WHERE clause does not include the first column of the index which is the firstname column.
 The query has over 2600 logical read and is not efficient.
@@ -168,6 +175,7 @@ CREATE iNDEX IX_applicants_LastNameFirstName
 ````
 Looking at the execution plan, we now have and index seek. The query is traversing the tree structure of the index and is therefore more efficient.
 
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan6.png)
 
 The number of logical reads has decreased significantly.
 ````
@@ -186,9 +194,13 @@ Consider the following statements. We have a query to find all students from a p
 CREATE INDEX IX_students_state
 	ON students (state);
 
-SELECT * from students  
+SELECT * FROM students  
 WHERE state = 'WI' AND city = 'Appleton';
 ````
+
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan7.png)
+
+
 When we look at the execution plan, we see that SQl server does not even use the index. The index is not selective enough.
     
 - If we have a column that is not selective by itself, then we need to use it in conjunction with other columns to make it selective.
@@ -198,7 +210,7 @@ We can make the previous index more selective by using the city in the index.
 
 ````sql
 CREATE INDEX IX_students_StateCity
-	ON students (state);
+	ON students (state,city);
 ````
 
 
@@ -212,7 +224,7 @@ AND firstname LIKE '%Thomas%';
 
 Using a wildcard at the beginning of a search value, SQL server is not able to use the index for that column. This will lead to an entire scan of the index or the table. We need to provide enough information for our query to be selective enough so that sql server can use the index.
 
-
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan8.png)
 
 #### 4. Functions in the where clause affects indexes.
 
@@ -229,7 +241,7 @@ WHERE REVERSE(studentid) LIKE REVERSE('%07295');
 However looking at the execution plan we find that SQL server is still performing a scan on the entire Index. This is because we have a function on the studentID in the WHERE clause. This query is not an improvement over using a leading wildcard. 
 
 
-plan9
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan9.png)
 
 
 
@@ -264,7 +276,7 @@ WHERE reversedID LIKE REVERSE('%07295');
 We are able to use the index
 
 
-plan10
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan10.png)
 
 ```
 Table 'Students'. Scan count 1, logical reads 2
@@ -297,7 +309,7 @@ SQL server is able to find all the data for the query in the index itself. There
 
 
 
-plan 11
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/plan11.png)
 
 **Note: we should only consider a covering index when we only need to add one or two columns to give a performance boost to a key query. Including to many columns is basically just making another copy of the table**
 
