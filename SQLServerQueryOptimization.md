@@ -7,7 +7,8 @@
 Analyze SQL queries to find performance issues and fix them.
 
 #### Entity Relationship Diagram
-![alt text]([https://github.com/iweld/8-Week-SQL-Challenge/blob/main/Case%20Study%201%20-%20Danny's%20Diner/ERD.jpg](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/bikestrores_database.png))
+
+![](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/bikestrores_database.png)
 
 
 #### 1. Adding Missing Indexes
