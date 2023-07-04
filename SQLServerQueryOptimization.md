@@ -7,7 +7,7 @@
 Analyze SQL queries to find performance issues and fix them.
 
 #### Entity Relationship Diagram
-![](/execution_plans/'students database.png')
+![](/execution_plans/'students_database.png')
 
 
 #### 1. Adding Missing Indexes
