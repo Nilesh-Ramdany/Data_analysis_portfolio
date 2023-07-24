@@ -215,4 +215,4 @@ Order by PropertyAddress
 |4063|104 06 0Q 001.00|  MARLBOROUGH AVE| NASHVILLE|2013-06-25|20130711-0071776|
 |5062|163 07 0A 904.00|  WILD OAKS CT| ANTIOCH|2013-06-28|20130702-0068072|
 
-At this point we should start normalizing the data as we did in this project: link
+At this point we should start normalizing the data as we did in this project: [link](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/Data_Normalization_SQL.md)
