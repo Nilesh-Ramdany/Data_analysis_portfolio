@@ -7,6 +7,7 @@
 <p></p>
 
 `SQL` `Juoyter Notebook` `Sales Analysis`
+
 In this project, I have sales data from a bikestore chain which has been store on a MySQL database. I will be using SQL to query the database and gain some insights into the sales data. SQL statements used in this project range from basic select statements to using window functions and recursive queries. [Read more →](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/SQL_sales_analysis.ipynb)
 
 ## SQL Query Optimization
