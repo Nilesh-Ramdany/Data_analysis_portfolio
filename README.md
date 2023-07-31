@@ -9,11 +9,14 @@
 
 ### Python
 6. 
-7.
+7. [Sales Analysis Using Python](#sales-analysis-using-python)
 
 ### Tableau
-8.
-9.
+[Tableau Public Profile](https://public.tableau.com/app/profile/nilesh.ramdany)
+
+8. [Inventory Overview Dasboard](#inventory-overview-dashboard)
+9. [Executive Dasboard](#executive-dashboard)
+
 
 ## SQL Sales Analysis
 <kbd>
@@ -72,4 +75,36 @@ Using SQL queries to clean data. [Read more →](https://github.com/Nilesh-Ramda
 `SQL` `Window Functions`
 
 Understanding how window functions work and their use cases. [Read more →](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/SQL_Window_Functions.md)
+
+## Sales Analysis Using Python
+<kbd>
+  <img src="https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/sales_barchart.png" width="600" height="400">
+</kbd>
+<p></p>
+
+`Python` `Data Cleaning` `Data Visualization`
+
+In this project, I have sales data that is scattered in multiple files. I will be using pandas, matplotlib and seaborn python libraries to clean, analyse and visualize the data to gain some insights into sales peerformance. [Read more →](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/sales_analysis.ipynb)
+
+## Inventory Overview Dashboard
+<kbd>
+  <img src="https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/Inventory%20dashboard.png" width="800" height="500">
+</kbd>
+<p></p>
+
+`Tableau` `Data Visualization`
+
+Tableau Dashboard showing key metrics and insight around the performance of a company's warehouses. The dashboard also includes a notification button that allows the user to see which products have concerning stock levels. I have posted the dashboard on tableau public: [Link](https://public.tableau.com/app/profile/nilesh.ramdany/viz/Inventoryoverview/Dashboard1)
+
+
+## Executive Dashboard
+
+<kbd>
+  <img src="https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/metrics%20dashboard.png" width="800" height="500">
+</kbd>
+<p></p>
+
+`Tableau` `Data Visualization`
+
+Tableau Dashboard to give executives an overview of the enterprise, how it is performing against established KPIs and compare with previous years. It includes features that allows the user to change the measures for the charts. I have posted the dashboard on tableau public: [Link](https://public.tableau.com/app/profile/nilesh.ramdany/viz/Book2_16884460187160/Dashboard1)
 
