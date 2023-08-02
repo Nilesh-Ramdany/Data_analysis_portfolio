@@ -8,7 +8,7 @@
 5. [SQL Window Functions](#window-functions)
 
 ### Python
-6. 
+6. [Sales(Time Series) Forecasting](#sales(time-series)-forecasting)
 7. [Sales Analysis Using Python](#sales-analysis-using-python)
 
 ### Tableau
@@ -75,6 +75,18 @@ Using SQL queries to clean data. [Read more →](https://github.com/Nilesh-Ramda
 `SQL` `Window Functions`
 
 Understanding how window functions work and their use cases. [Read more →](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/SQL_Window_Functions.md)
+
+
+## Sales(Time Series) Forecasting
+
+<kbd>
+  <img src="https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/execution%20plans/sales_forecast.png" width="600" height="400">
+</kbd>
+<p></p>
+
+`Python` `Time Series` `Forecasting` `Data Visualization`
+
+Building predictive models based on sales data and testing accuracy using holdout data. Selecting most appropriate model to forecast sales for next 12 months [Read more →](https://github.com/Nilesh-Ramdany/Data_analysis_portfolio/blob/main/Sales(Time%20Series)_Forecasting.ipynb)
 
 ## Sales Analysis Using Python
 <kbd>
