@@ -8,7 +8,7 @@
 5. [SQL Window Functions](#window-functions)
 
 ### Python
-6. [Sales(Time Series) Forecasting](#sales(time-series)-forecasting)
+6. [Sales(Time Series) Forecasting](#salestime-series-forecasting)
 7. [Sales Analysis Using Python](#sales-analysis-using-python)
 
 ### Tableau
